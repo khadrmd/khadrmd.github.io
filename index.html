@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>RevoU Mini Project Portofolio</title>
+    <link rel="stylesheet" type="text/css" href="./styles/index.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Megrim&family=Nunito+Sans:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <script src="./scripts.js"></script>
+  </head>
+  <body>
+    <header>
+      <a href="./index.html">
+        <img id="icon-header" src="./img/revou_logo.png" alt="Header Icon" />
+      </a>
+      <div class="header-nav">
+        <a href="#">Home</a>
+        <a href="#">Our Profile</a>
+        <a href="#">Achievement</a>
+        <a href="#">Message Us</a>
+      </div>
+    </header>
+    <main>
+      <section class="section-welcome">
+        <div class="container">
+          <p class="welcome-text">
+            Hi <span id="username">{%USERNAME%}</span>, Welcome to
+            <span id="company">RevoU</span> Website Demo!
+          </p>
+          <p id="home-text">Ini adalah website latihan pertama</p>
+          <img src="./img/pict2.png" alt="1366x578" />
+        </div>
+      </section>
+      <section class="section-facilities">
+        <div class="container">
+          <h1>Our Facilities</h1>
+          <ul class="facilities">
+            <li class="facility">
+              <img src="./img/terry.png" alt="teacher image" />
+              <a>Professional Teacher</a>
+            </li>
+            <li class="facility">
+              <img src="./img/field.png" alt="sport field image" />
+              <a>Sport Field</a>
+            </li>
+            <li class="facility">
+              <img src="./img/classroom.png" alt="classroom image" />
+              <a>Classroom</a>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section class="section-messageUs">
+        <div class="container">
+          <h1>Message Us</h1>
+          <form action="" onsubmit="submitForm()">
+            <div class="form-group">
+              <label for="name">Nama</label>
+              <span>:</span>
+              <input
+                type="text"
+                id="name"
+                name="nama"
+                placeholder="Nama"
+              /><br />
+            </div>
+            <div class="form-group">
+              <label for="date">Tanggal Lahir</label>
+              <span>:</span>
+              <input type="date" id="date" name="date" />
+            </div>
+            <div class="form-group">
+              <label for="gender">Jenis Kelamin</label>
+              <span>:</span>
+              <input type="radio" name="gender" id="male" value="Laki-laki" />
+              <label for="male">Laki-laki</label>
+              <input type="radio" name="gender" id="female" value="Perempuan" />
+              <label for="female">Perempuan</label>
+            </div>
+            <div class="form-group">
+              <label for="name">Pesan</label>
+              <span>:</span>
+              <textarea
+                id="pesan"
+                name="pesan"
+                rows="5"
+                placeholder="Pesan"
+              ></textarea>
+            </div>
+            <input type="submit" id="submit" />
+            <input type="reset" id="reset" />
+          </form>
+          <div class="form-res">
+            <p><b>Current time :</b><span>{%CURRENTTIME%}</span></p>
+            <p><b>Nama :</b><span>{%NAMA%}</span></p>
+            <p><b>Tanggal Lahir :</b><span>{%BIRTHDATE%}</span></p>
+            <p><b>Jenis Kelamin :</b><span>{%GENDER%}</span></p>
+            <p><b>Pesan :</b><span>{%PESAN%}</span></p>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <p>&copy; 2023 Created For RevoU</p>
+    </footer>
+  </body>
+</html>

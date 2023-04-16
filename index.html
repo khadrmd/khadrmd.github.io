@@ -3,33 +3,42 @@
   <head>
     <title>RevoU Mini Project Portofolio</title>
     <link rel="stylesheet" type="text/css" href="./styles/index.css" />
+    <link rel="icon" type="image/png" href="./img/revou_logo.png" />
     <link
       href="https://fonts.googleapis.com/css2?family=Megrim&family=Nunito+Sans:wght@400;600&display=swap"
       rel="stylesheet"
     />
     <script src="./scripts.js"></script>
   </head>
-  <body>
+  <body onload="namePrompt()">
     <header>
       <a href="./index.html">
         <img id="icon-header" src="./img/revou_logo.png" alt="Header Icon" />
       </a>
       <div class="header-nav">
-        <a href="#">Home</a>
+        <a href="#section-welcome">Home</a>
         <a href="#">Our Profile</a>
         <a href="#">Achievement</a>
-        <a href="#">Message Us</a>
+        <a href="#section-messageUs">Message Us</a>
       </div>
     </header>
     <main>
-      <section class="section-welcome">
+      <section class="section-welcome" id="section-welcome">
         <div class="container">
           <p class="welcome-text">
             Hi <span id="username">{%USERNAME%}</span>, Welcome to
             <span id="company">RevoU</span> Website Demo!
           </p>
           <p id="home-text">Ini adalah website latihan pertama</p>
-          <img src="./img/pict2.png" alt="1366x578" />
+          <div class="sliding-img">
+            <button class="prev-img">
+              <img src="./img/chevron.svg" alt="next image" />
+            </button>
+            <img src="./img/pict2.png" alt="1366x578" />
+            <button class="next-img">
+              <img src="./img/chevron.svg" alt="next image" />
+            </button>
+          </div>
         </div>
       </section>
       <section class="section-facilities">
@@ -51,52 +60,71 @@
           </ul>
         </div>
       </section>
-      <section class="section-messageUs">
+      <section class="section-messageUs" id="section-messageUs">
         <div class="container">
           <h1>Message Us</h1>
-          <form action="" onsubmit="submitForm()">
+          <form name="form" onsubmit="submitForm(event)">
             <div class="form-group">
               <label for="name">Nama</label>
               <span>:</span>
               <input
                 type="text"
-                id="name"
+                id="form-name"
                 name="nama"
                 placeholder="Nama"
+                required
               /><br />
             </div>
             <div class="form-group">
-              <label for="date">Tanggal Lahir</label>
+              <label for="form-birthdate">Tanggal Lahir</label>
               <span>:</span>
-              <input type="date" id="date" name="date" />
+              <input
+                type="date"
+                id="form-birthdate"
+                name="birthdate"
+                required
+              />
             </div>
             <div class="form-group">
               <label for="gender">Jenis Kelamin</label>
               <span>:</span>
-              <input type="radio" name="gender" id="male" value="Laki-laki" />
+              <input
+                type="radio"
+                name="gender"
+                id="male"
+                value="Laki-laki"
+                required
+              />
               <label for="male">Laki-laki</label>
               <input type="radio" name="gender" id="female" value="Perempuan" />
               <label for="female">Perempuan</label>
             </div>
             <div class="form-group">
-              <label for="name">Pesan</label>
+              <label for="form-pesan">Pesan</label>
               <span>:</span>
               <textarea
-                id="pesan"
+                id="form-pesan"
                 name="pesan"
                 rows="5"
                 placeholder="Pesan"
               ></textarea>
             </div>
-            <input type="submit" id="submit" />
+            <input type="submit" id="submit" value="Submit" />
             <input type="reset" id="reset" />
           </form>
           <div class="form-res">
-            <p><b>Current time :</b><span>{%CURRENTTIME%}</span></p>
-            <p><b>Nama :</b><span>{%NAMA%}</span></p>
-            <p><b>Tanggal Lahir :</b><span>{%BIRTHDATE%}</span></p>
-            <p><b>Jenis Kelamin :</b><span>{%GENDER%}</span></p>
-            <p><b>Pesan :</b><span>{%PESAN%}</span></p>
+            <p>
+              <b>Current time : </b><span id="res-time">{%CURRENTTIME%}</span>
+            </p>
+            <p><b>Nama : </b><span id="res-name">{%NAMA%}</span></p>
+            <p>
+              <b>Tanggal Lahir : </b
+              ><span id="res-birthdate">{%YYYY-MM-DD%}</span>
+            </p>
+            <p>
+              <b>Jenis Kelamin : </b><span id="res-gender">{%GENDER%}</span>
+            </p>
+            <p><b>Pesan : </b><span id="res-pesan">{%PESAN%}</span></p>
           </div>
         </div>
       </section>

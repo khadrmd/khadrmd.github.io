@@ -19,6 +19,21 @@ header {
   justify-content: space-between;
 }
 
+header > a {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  gap: 20px;
+}
+
+header #company {
+  font-family: "Megrim", sans-serif;
+  font-size: 40px;
+  filter: blur(0.3px);
+  font-weight: bold;
+  text-decoration: none;
+}
+
 #icon-header {
   align-self: center;
   width: 70px;

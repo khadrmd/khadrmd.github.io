@@ -10,7 +10,7 @@
     />
     <script src="./scripts.js"></script>
   </head>
-  <body onload="namePrompt()">
+  <body onload="__init__()">
     <header>
       <a href="./index.html">
         <img id="icon-header" src="./img/revou_logo.png" alt="Header Icon" />
@@ -30,12 +30,14 @@
             <span id="company">RevoU</span> Website Demo!
           </p>
           <p id="home-text">Ini adalah website latihan pertama</p>
-          <div class="sliding-img">
-            <button class="prev-img">
+          <div class="banner">
+            <button class="prev-img" onclick="nextImg(-1)">
               <img src="./img/chevron.svg" alt="next image" />
             </button>
-            <img src="./img/pict2.png" alt="1366x578" />
-            <button class="next-img">
+            <img class="banner-img" src="./img/pict1.png" alt="1366x578" />
+            <img class="banner-img" src="./img/pict2.png" alt="1366x578" />
+            <img class="banner-img" src="./img/pict3.png" alt="1366x578" />
+            <button class="next-img" onclick="nextImg(1)">
               <img src="./img/chevron.svg" alt="next image" />
             </button>
           </div>
@@ -63,7 +65,7 @@
       <section class="section-messageUs" id="section-messageUs">
         <div class="container">
           <h1>Message Us</h1>
-          <form name="form" onsubmit="submitForm(event)">
+          <form name="form" onsubmit="return submitForm()">
             <div class="form-group">
               <label for="name">Nama</label>
               <span>:</span>
